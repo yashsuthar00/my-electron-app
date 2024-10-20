@@ -3,13 +3,24 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "build": {
+    "appId": "com.example.electronapp",
+    "productName": "My Electron App",
+    "files": [
+      "main.js",
+      "index.html",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  },
   "devDependencies": {
-    "electron": "^33.0.1"
+    "electron": "^33.0.1",
+    "electron-builder": "^25.1.8"
   }
 }
